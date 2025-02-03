@@ -1,9 +1,24 @@
+/*
+ * Colton Kohler
+ * 2/2/2025
+ * M5 Assignment
+ *
+ * Purpose: This program finds the location of the largest and smallest
+ *          elements in a 2D integer and double array.
+ */
+
 public class FindLargestSmallest {
 
+    /**
+     * Finds the position of the largest value in a 2D double array.
+     * @param arr The 2D double array to search.
+     * @return An array containing {row, column} of the largest value.
+     */
     public static int[] findLargest(double[][] arr) {
-        int[] position = {0, 0};
+        int[] position = {0, 0}; // Stores the location of the largest value
         double largest = arr[0][0];
 
+        // Loop through the array to find the largest element
         for (int row = 0; row < arr.length; row++) {
             for (int col = 0; col < arr[row].length; col++) {
                 if (arr[row][col] > largest) {
@@ -16,6 +31,11 @@ public class FindLargestSmallest {
         return position;
     }
 
+    /**
+     * Finds the position of the largest value in a 2D integer array.
+     * @param arr The 2D integer array to search.
+     * @return An array containing {row, column} of the largest value.
+     */
     public static int[] findLargest(int[][] arr) {
         int[] position = {0, 0};
         int largest = arr[0][0];
@@ -32,6 +52,11 @@ public class FindLargestSmallest {
         return position;
     }
 
+    /**
+     * Finds the position of the smallest value in a 2D double array.
+     * @param arr The 2D double array to search.
+     * @return An array containing {row, column} of the smallest value.
+     */
     public static int[] findSmallest(double[][] arr) {
         int[] position = {0, 0};
         double smallest = arr[0][0];
@@ -48,6 +73,11 @@ public class FindLargestSmallest {
         return position;
     }
 
+    /**
+     * Finds the position of the smallest value in a 2D integer array.
+     * @param arr The 2D integer array to search.
+     * @return An array containing {row, column} of the smallest value.
+     */
     public static int[] findSmallest(int[][] arr) {
         int[] position = {0, 0};
         int smallest = arr[0][0];
@@ -64,6 +94,9 @@ public class FindLargestSmallest {
         return position;
     }
 
+    /**
+     * Main method to test the program.
+     */
     public static void main(String[] args) {
         int[][] intNumbers = {
                 {500, -20, 300},
@@ -77,11 +110,13 @@ public class FindLargestSmallest {
                 {-25000.6, 9.9, 420.7}
         };
 
+        // Find largest and smallest elements in both arrays
         int[] largestInt = findLargest(intNumbers);
         int[] smallestInt = findSmallest(intNumbers);
         int[] largestDouble = findLargest(doubleNumbers);
         int[] smallestDouble = findSmallest(doubleNumbers);
 
+        // Print results
         System.out.println("Largest in int array: (" + largestInt[0] + ", " + largestInt[1] + ")");
         System.out.println("Smallest in int array: (" + smallestInt[0] + ", " + smallestInt[1] + ")");
         System.out.println("Largest in double array: (" + largestDouble[0] + ", " + largestDouble[1] + ")");
